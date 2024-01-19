@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 import { db } from '@/lib/db'
-import { getProfile } from '@/lib/profile'
+import { getProfile } from '@/services/profile'
 import { Member, MemberRole, Server } from '@prisma/client'
 
 export async function updateMemberRole(member: Member, role: MemberRole) {

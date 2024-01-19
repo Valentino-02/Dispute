@@ -2,7 +2,6 @@ import './globals.css'
 import 'react-toastify/dist/ReactToastify.css'
 import type { Metadata } from 'next'
 import { Ubuntu } from 'next/font/google'
-import { ClerkProvider } from '@clerk/nextjs'
 import { ToastContainer } from 'react-toastify'
 
 import ThemeProvider from '@/components/providers/ThemeProvider'
@@ -10,6 +9,7 @@ import ModalProvider from '@/components/providers/ModalProvider'
 import { SocketProvider } from '@/components/providers/SocketProvider'
 import { QueryProvider } from '@/components/providers/QueryProvider'
 import { cn } from '@/lib/utils'
+import { AuthProvider } from '@/components/providers/AuthProvider'
 
 const font = Ubuntu({ subsets: ['latin'], weight: '700' })
 
@@ -31,7 +31,7 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
+    <AuthProvider>
       <html lang="en" suppressHydrationWarning>
         <body className={cn(font.className, ' bg-white dark:bg-[#080719]')}>
           <ThemeProvider
@@ -48,8 +48,6 @@ export default async function RootLayout({
           </ThemeProvider>
         </body>
       </html>
-    </ClerkProvider>
+    </AuthProvider>
   )
 }
-
-//#010014

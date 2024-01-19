@@ -3,7 +3,7 @@ import * as z from 'zod'
 
 import { formSchema } from '@/components/modals/serverModals/ServerForm'
 import { db } from '@/lib/db'
-import { getProfile } from '@/lib/profile'
+import { getProfile } from '@/services/profile'
 
 export async function createServer(values: z.infer<typeof formSchema>) {
   await axios.post('/api/servers', values)

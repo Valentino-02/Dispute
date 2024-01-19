@@ -1,9 +1,19 @@
-import { authMiddleware } from '@clerk/nextjs'
+export { default } from 'next-auth/middleware'
 
-export default authMiddleware({
-  publicRoutes: ['/api/uploadthing', '/api/socket', '/', '/newUser'],
-})
+/* export default authMiddleware({
+  publicRoutes: [
+    '/api/uploadthing',
+    '/api/socket',
+    'api/auth',
+    '/',
+    '/newUser',
+  ],
+}) 
+
+matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
+
+*/
 
 export const config = {
-  matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
+  matcher: ['/servers/:path*', '/home', '/invite/:path*'],
 }

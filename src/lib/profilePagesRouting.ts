@@ -6,7 +6,7 @@ import { getAuth } from '@clerk/nextjs/server'
 import { db } from '@/lib/db'
 
 export default async function getProfile(req: NextApiRequest) {
-  const { userId } = getAuth(req)
+  /* const { userId } = getAuth(req)
 
   if (!userId) {
     return null
@@ -18,5 +18,6 @@ export default async function getProfile(req: NextApiRequest) {
     },
   })
 
-  return profile
+  return profile */
+  return null
 }

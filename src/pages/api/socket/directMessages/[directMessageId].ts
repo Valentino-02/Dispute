@@ -2,7 +2,7 @@ import { NextApiRequest } from 'next'
 import { MemberRole } from '@prisma/client'
 
 import { NextApiResponseServerIo } from '@/types'
-import getProfile from '@/lib/profilePagesRouting'
+import { getProfile } from '@/services/profile'
 import { db } from '@/lib/db'
 
 export default async function handler(
@@ -14,7 +14,7 @@ export default async function handler(
   }
 
   try {
-    const profile = await getProfile(req)
+    const profile = await getProfile()
     const { directMessageId, conversationId } = req.query
     const { content } = req.body
 

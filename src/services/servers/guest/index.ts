@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 import { db } from '@/lib/db'
-import { getProfile } from '@/lib/profile'
+import { getProfile } from '@/services/profile'
 
 export async function getServerIJoinedByInvite(inviteCode: string) {
   const profile = await getProfile()

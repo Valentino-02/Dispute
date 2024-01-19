@@ -1,7 +1,7 @@
 import { NextApiRequest } from 'next'
 
 import { NextApiResponseServerIo } from '@/types'
-import getProfile from '@/lib/profilePagesRouting'
+import { getProfileFromPagesApi } from '@/services/profile'
 import { db } from '@/lib/db'
 
 export default async function handler(
@@ -13,7 +13,7 @@ export default async function handler(
   }
 
   try {
-    const profile = await getProfile(req)
+    const profile = await getProfileFromPagesApi(req, res)
     const { content, fileUrl, serverId, channelId } = req.body
 
     if (!profile) {

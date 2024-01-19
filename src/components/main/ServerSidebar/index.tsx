@@ -3,13 +3,13 @@ import { Hash, Mic, ShieldAlert, ShieldCheck, Video } from 'lucide-react'
 
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Separator } from '@/components/ui/separator'
-import { getProfile } from '@/lib/profile'
 import ServerHeader from './ServerHeader'
 import ServerSearch from './ServerSearch'
 import ServerSection from './ServerSection'
 import ServerChannel from './ServerChannel'
 import ServerMember from './ServerMember'
 import { getAllServerData } from '@/services/servers'
+import { getProfile } from '@/services/profile'
 
 const iconMap = {
   [ChannelType.TEXT]: <Hash className="w-4 h-4 mr-2" />,

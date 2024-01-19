@@ -14,7 +14,7 @@ interface MediaRoomProps {
 }
 
 export default function MediaRoom({ chatId, video, audio }: MediaRoomProps) {
-  const { user } = useUser()
+  const user = { firstName: 'he', lastName: 'ho' }
   const [token, setToken] = useState('')
 
   useEffect(() => {

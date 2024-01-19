@@ -2,19 +2,17 @@
 
 import { Plus } from 'lucide-react'
 import { toast } from 'react-toastify'
+import { useSession } from 'next-auth/react'
 
 import { ActionTooltip } from '@/components/shared/ActionTooltip'
 import { useModal } from '@/hooks/useModal'
 
-export default function CreateServerAction({
-  isSignedIn,
-}: {
-  isSignedIn: boolean
-}) {
+export default function CreateServerAction() {
   const { openModal } = useModal()
+  const { data: session } = useSession()
 
   const onClick = async () => {
-    if (!isSignedIn) {
+    if (!session) {
       toast('Sign in to create a server!')
       return
     }

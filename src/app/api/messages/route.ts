@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { Message } from '@prisma/client'
 
-import { getProfile } from '@/lib/profile'
+import { getProfile } from '@/services/profile'
 import { db } from '@/lib/db'
 
 const MESSAGES_BATCH = 10

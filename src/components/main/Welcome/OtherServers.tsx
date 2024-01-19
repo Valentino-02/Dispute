@@ -6,7 +6,8 @@ export default async function OtherServers() {
       </p>
 
       <p className="mt-10 text-lg text-center mb-7 md:text-start ">
-        To Join other servers, the owner needs to share you the invitation link
+        To Join other people servers, the owner needs to share the invitation
+        link
       </p>
     </div>
   )

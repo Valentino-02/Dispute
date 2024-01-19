@@ -6,10 +6,10 @@ import { currentUser, redirectToSignIn, auth } from '@clerk/nextjs'
 import { db } from '@/lib/db'
 
 export async function tryCreateProfile() {
-  const user = await currentUser()
+  /* const user = await currentUser()
 
   if (!user) {
-    return redirectToSignIn()
+    return
   }
 
   const profile = await db.profile.findUnique({
@@ -31,11 +31,12 @@ export async function tryCreateProfile() {
     },
   })
 
-  return newProfile
+  return newProfile */
+  return null
 }
 
 export const getProfile = async () => {
-  const { userId } = auth()
+  /*   const { userId } = auth()
 
   if (!userId) {
     return null
@@ -47,5 +48,6 @@ export const getProfile = async () => {
     },
   })
 
-  return profile
+  return profile */
+  return null
 }

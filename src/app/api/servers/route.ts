@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 import { MemberRole } from '@prisma/client'
 
 import { db } from '@/lib/db'
-import { getProfile } from '@/lib/profile'
+import { getProfile } from '@/services/profile'
 
 export async function POST(req: Request) {
   try {
